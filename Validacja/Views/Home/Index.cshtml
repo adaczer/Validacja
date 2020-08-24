@@ -1,0 +1,31 @@
+﻿@model Validacja.Models.Pracownik
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@helper Podswietlenie(string str)
+    {
+    <span style="background-color: yellow">
+        @str
+    </span>
+    }
+
+
+@using (Html.BeginForm("Index", "Home"))
+{
+    @Html.EditorFor(m=>m)
+
+    <input type="submit" value="Wyslij"/>
+
+}
+
+<div>
+    Tutaj proba mojego helpera:
+</div>
+<p>@Podswietlenie("napis probny")</p>
+
+
+@mojeHelpery.Podswietlenie("napis wersja globalna")
